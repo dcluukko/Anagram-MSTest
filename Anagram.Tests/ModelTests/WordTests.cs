@@ -62,19 +62,19 @@ namespace Anagram.Tests
     public void WordListToCharArrays_ReturnsList_List()
     {
       //Arrange
-      List<string> words = new List<string> {};
-      words.Add("beard");
-      Word inputWord = new Word("bread", words);
-      string listWord = "beard";
-      List<char[]> listWordList = new List<char[]> {};
+      List<string> anagrams = new List<string> {};
+      anagrams.Add("beard");
+      Word inputWordObject = new Word("bread", anagrams);
+      string possibleAnagram = "beard";
+      List<char[]> listOfPossibleAnagrams = new List<char[]> {};
 
       //Act
-      List<char[]> wordListArrays = inputWord.WordListToCharArrays();
-      char[] listWordArr = listWord.ToCharArray();
-      listWordList.Add(listWordArr);
+      List<char[]> listOfSplitAnagrams = inputWordObject.WordListToCharArrays();
+      char[] splitAnagram = possibleAnagram.ToCharArray();
+      listOfPossibleAnagrams.Add(splitAnagram);
 
       //Assert
-      CollectionAssert.AreEqual(listWordList, wordListArrays);
+      CollectionAssert.AreEqual(listOfSplitAnagrams[0], listOfPossibleAnagrams[0]);
     }
 
   }
