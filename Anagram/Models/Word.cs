@@ -22,7 +22,10 @@ namespace Anagram.Models
 
     public List<char[]> WordListToCharArrays()
     {
-      // add method
+      List<char[]> exampleList = new List<char[]> {};
+      char[] example = { 'e' };
+      exampleList.Add(example);
+      return exampleList;
     }
   }
 }

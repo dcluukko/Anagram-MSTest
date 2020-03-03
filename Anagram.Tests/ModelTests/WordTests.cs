@@ -46,7 +46,7 @@ namespace Anagram.Tests
     {
       //Arrange
       List<string> words = new List<string> {};
-      words.Add("bread");
+      words.Add("beard");
       Word inputWord = new Word("bread", words);
       string myWord = "bread";
       
@@ -62,10 +62,19 @@ namespace Anagram.Tests
     public void WordListToCharArrays_ReturnsList_List()
     {
       //Arrange
+      List<string> words = new List<string> {};
+      words.Add("beard");
+      Word inputWord = new Word("bread", words);
+      string listWord = "beard";
+      List<char[]> listWordList = new List<char[]> {};
 
       //Act
+      List<char[]> wordListArrays = inputWord.WordListToCharArrays();
+      char[] listWordArr = listWord.ToCharArray();
+      listWordList.Add(listWordArr);
 
       //Assert
+      CollectionAssert.AreEqual(listWordList, wordListArrays);
     }
 
   }
